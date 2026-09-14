@@ -15,6 +15,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import logoAsset from "@/assets/cater-kitchen-logo-tight.png.asset.json";
 import kitchenImage from "@/assets/central-kitchen.jpg";
@@ -283,15 +284,15 @@ function HomePage() {
             <p className="mt-8 max-w-2xl text-lg leading-8 text-brand-sand/80">Responsible food service begins with responsible choices. We work toward reducing food waste, optimizing energy consumption, encouraging responsible sourcing, minimizing plastic usage, and implementing environmentally conscious kitchen practices.</p>
           </div>
           <div className="grid grid-cols-2 gap-px bg-brand-cream/20">
-            {[
+            {([
               [Leaf, 'Waste reduction'],
               [Utensils, 'Responsible sourcing'],
               [Truck, 'Smarter logistics'],
               [Check, 'Continuous improvement'],
-            ].map(([Icon, label]) => (
+            ] as [LucideIcon, string][]).map(([Icon, label]) => (
               <div key={label as string} className="bg-brand-maroon p-6 sm:p-8">
                 <Icon size={22} className="mb-10 text-brand-sand" />
-                <span className="font-ui text-xs font-bold uppercase leading-5 tracking-[0.12em] text-brand-cream/75">{label as string}</span>
+                <span className="font-ui text-xs font-bold uppercase leading-5 tracking-[0.12em] text-brand-cream/75">{label}</span>
               </div>
             ))}
           </div>
